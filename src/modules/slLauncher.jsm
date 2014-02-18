@@ -323,7 +323,8 @@ function prepareLoader(scriptInfo) {
         metadata: Object.freeze(metadata),
         paths:pathsMapping,
         globals: {
-            console: new slConsole()
+            console: new slConsole(),
+            xhr: Components.Constructor("@mozilla.org/xmlextras/xmlhttprequest;1", "nsIXMLHttpRequest")
         },
         modules: {
           "webserver": Cu.import("resource://slimerjs/webserver.jsm", {}),
